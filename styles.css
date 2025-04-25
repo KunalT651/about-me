@@ -1,0 +1,185 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #222;
+    position: relative;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+.logo:hover {
+    color: #2575fc;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+nav ul li a:hover {
+    color: #2575fc;
+}
+#menu-toggle {
+    display: none;
+}
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 10px;
+}
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 10px;
+    background-color: #222;
+    width: 200px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.mobile-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    text-align: center;
+}
+#menu-toggle:checked + .hamburger + .mobile-nav {
+    display: flex;
+}
+.hero {
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #ffffff;
+}
+.about, .experience, .contact {
+    padding: 40px;
+    text-align: center;
+    background-color: #ffffff;
+}
+.experience {
+    background-color: #aba9a9;
+}
+.experience-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+}
+.experience-item {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    color: #ffffff;
+    width: 48%;
+}
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.contact input, .contact textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    background-color: #ffffff;
+}
+.contact button {
+    padding: 10px;
+    background-color: #2575fc;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    width: 80%;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.contact button:hover {
+    background-color: #6a11cb;
+}
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    nav {
+        display: none;
+    }
+    .experience-grid {
+        flex-wrap: nowrap;
+    }
+    .experience-item {
+        width: 48%;
+    }
+    .contact input, .contact textarea, .contact button {
+        width: 80%;
+    }
+}
+@media (max-width: 480px) {
+    .experience-grid {
+        flex-wrap: wrap;
+    }
+    .experience-item {
+        width: 100%;
+    }
+    .mobile-nav {
+        display: none;
+        width: 100%;
+        top: 60px;
+    }
+    #menu-toggle:checked + .hamburger + .mobile-nav {
+        display: flex;
+    }
+    .contact input, .contact textarea, .contact button {
+        width: 100%;
+    }
+}
+@media (max-width: 320px) {
+    body {
+        padding: 0 10px;
+    }
+    .hero {
+        padding: 30px;
+    }
+    .contact input, .contact textarea, .contact button {
+        width: 100%;
+    }
+    .about, .experience, .contact {
+        padding: 20px;
+    }
+    .experience-grid {
+        flex-wrap: wrap;
+        gap: 10px;
+        flex-direction: column;
+    }
+    .experience-item {
+        width: 50%;
+    }
+    .hamburger {
+        font-size: 25px;
+    }
+}

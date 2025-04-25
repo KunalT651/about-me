@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">My Portfolio</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Checkbox input that controls the menu -->
+        <input type="checkbox" id="menu-toggle">
+        
+        <!-- Label acts as the clickable hamburger icon -->
+        <label for="menu-toggle" class="hamburger">☰</label>
+        
+        <!-- Mobile navigation menu -->
+        <div class="mobile-nav">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Showcasing my work and skills in web development.</p>
+        </section>
+        
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <p>I am a web developer with expertise in front-end and back-end technologies.</p>
+            <img src="../Images/KunalsPhoto.jpg" alt="My Photo" width="150">
+        </section>
+        
+        <section id="experience" class="experience">
+            <h2>My Experiences</h2>
+            <div class="experience-grid">
+                <div class="experience-item">
+                    <h3>Assistant System Engineer</h3>
+                    <p><strong>Company:</strong> TCS</p>
+                    <p><strong>Domain:</strong> Web Development</p>
+                    <p><strong>Duration:</strong> Apr 2021 - Dec 2023</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Software Engineer</h3>
+                    <p><strong>Company:</strong> CyberTech</p>
+                    <p><strong>Domain:</strong> Software Development</p>
+                    <p><strong>Duration:</strong> Dec 2023 - Dec 2024</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="contact">
+            <h2>Contact Me</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        //Get the checkbox and mobile nav elements
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuLinks = document.querySelectorAll('.mobile-nav a');
+        
+        //Close the menu when any link is clicked
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.checked = false;  // Uncheck the checkbox to close the menu
+            });
+        });
+
+        //Hide the menu when the screen is resized to a desktop view
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                menuToggle.checked = false;  //Uncheck the checkbox when resized above mobile view
+            }
+        });
+    </script>
+</body>
+</html>
